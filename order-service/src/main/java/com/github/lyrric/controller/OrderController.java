@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @author wangxiaodong
  */
 @RestController
-@RequestMapping(value = "/api/v1.0/user")
-public class UserController {
+@RequestMapping(value = "/api/v1.0/order")
+public class OrderController {
 
     @Value("${server.port}")
     private Integer port;
@@ -22,6 +22,6 @@ public class UserController {
 
     @GetMapping(value = "/get")
     public String get(){
-        return "当前登陆用户：test， 来自" + applicationName + "服务，端口：" + port;
+        return "订单服务， 来自" + applicationName + "服务，端口：" + port;
     }
 }

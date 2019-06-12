@@ -9,3 +9,21 @@ eureka:
 spring:
   application:
     name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: user-service  # 服务的id
+        uri: lb://user-service #服务的application名称
+        predicates:
+        - Path=/user-service/**  #匹配前缀
+        filters:
+         - StripPrefix=1 #去前缀 去几层
+      - id: order-service  # 服务的id
+        uri: lb://order-service #服务的application名称
+        predicates:
+        - Path=/order-service/**  #匹配前缀
+        filters:
+        - StripPrefix=1 #去前缀 去几层

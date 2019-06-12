@@ -22,6 +22,6 @@ public class UserController {
 
     @GetMapping(value = "/get")
     public String get(){
-        return "当前登陆用户：test， 来自" + applicationName + "服务，端口：" + port;
+        return "用户服务， 来自" + applicationName + "服务，端口：" + port;
     }
 }
